@@ -103,12 +103,16 @@ Vagrant.configure("2") do |config|
           ansible.inventory_path = "inventory"
           ansible.limit = "all"
           ansible.host_key_checking = false
+          # ansible.verbose = "vvv"
+          ansible.verbose = true
         end
         n.vm.provision "addon", type: "ansible" do |ansible|
           ansible.playbook = "addons.yml"
           ansible.inventory_path = "inventory"
           ansible.limit = "all"
           ansible.host_key_checking = false
+          # ansible.verbose = "vvv"
+          ansible.verbose = true
         end
       end
     end

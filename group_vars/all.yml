@@ -14,7 +14,7 @@ pod_network_cidr: 10.244.0.0/16
 
 # CNI opts,
 # flannel(--iface=enp0s8), calico(interface=enp0s8), canal(enp0s8).
-cni_iface: ""
+cni_iface: interface=eth1
 
 # Kubernetes cluster network.
 cluster_subnet: 10.96.0
@@ -26,7 +26,7 @@ api_secure_port: 5443
 # Highly Available configuration.
 haproxy: true
 keepalived: true # set `lb_vip_address` as keepalived vip, if this enable.
-keepalived_vip_interface: "{{ ansible_default_ipv4.interface }}"
+keepalived_vip_interface: eth1
 
 lb_vip_address: 172.16.35.9
 lb_secure_port: 6443
@@ -35,7 +35,7 @@ lb_api_url: "https://{{ lb_vip_address }}:{{ lb_secure_port }}"
 # Etcd configuration variables.
 etcd_initial_token: etcd-k8s-cluster
 etcd_domain_name: test.etcd.com
-etcd_iface: ""
+etcd_iface: eth1
 
 # A list of insecure registrys you might need to define
 add_registry:
@@ -87,6 +87,8 @@ ceph_cluster: false
 
 # Add http and https proxy
 proxy_env:
+  # http_proxy: "http://docker:DockerPass@192.168.1.47:8433"
+  # https_proxy: "http://docker:DockerPass@192.168.1.47:8433"
   http_proxy: "" # http://:<usr>@<passwd>:<ip>:<port>
   https_proxy: "" # https://<usr>:<passwd>@<ip>:<port>
 
