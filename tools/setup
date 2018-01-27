@@ -9,7 +9,8 @@ set -eu
 
 : ${MASTERS:="1"}
 : ${NODES:="2"}
-: ${CPU:="1"}
+# : ${CPU:="1"}
+: ${CPU:="2"}
 : ${MEMORY:="2048"}
 : ${ETH:="eth1"}
 : ${CNI_PLUGIN:="calico"}

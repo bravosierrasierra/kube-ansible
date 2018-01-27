@@ -1,7 +1,7 @@
 # Vagrant machine variables
 $master_count = 1
 $node_count = 2
-$system_vcpus = 1
+$system_vcpus = 2
 $system_memory = 2048
 $bridge_enable = false
 $bridge_eth = "eno1"

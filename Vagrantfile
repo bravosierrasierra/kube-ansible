@@ -81,6 +81,7 @@ Vagrant.configure("2") do |config|
       n.vm.provider :virtualbox do |vb, override|
         vb.name = "kube-#{n.vm.hostname}"
         set_vbox(vb, override)
+        # vb.cpus = 2
       end
 
       # Configure libvirt provider
